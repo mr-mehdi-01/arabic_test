@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تقرير النتيجة | اختبار العربية</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar no-print">
+  <div class="brand"><span class="logo">A</span><span>Arabic Level Test</span></div>
+  <nav class="nav"><a href="index.html">الرئيسية</a><a href="test.html">الاختبار</a><a class="active" href="result.html">النتيجة</a></nav>
+  <button class="top-btn" onclick="window.print()">طباعة التقرير</button>
+</header>
+
+<main class="page result-page">
+<section class="result-hero">
+  <div>
+    <span class="level-chip" id="levelChip">تحليل النتيجة</span>
+    <div class="report-kicker">تقرير تشخيصي للطالب</div>
+    <h1 id="resultTitle">المستوى العام</h1>
+    <h2 id="studentNameResult">—</h2>
+    <p id="resultSummary"></p>
+    <div id="foundation"></div>
+  </div>
+  <div class="score-circle" id="scoreCircle"><div class="score-number"><span id="score">0</span><small>%<br>الدقة الكلية</small></div></div>
+</section>
+
+<section class="summary-strip">
+  <div><small>الإجابات الصحيحة</small><strong id="correctStat">0 / 40</strong></div>
+  <div><small>الأسئلة المجابة</small><strong id="answeredStat">0 / 40</strong></div>
+  <div><small>الأساسيات</small><strong id="basicStat">0%</strong></div>
+  <div><small>أعلى صعوبة مكتسبة</small><strong id="demonstratedStat">—</strong></div>
+</section>
+
+<div class="dashboard-grid">
+  <section class="result-card wide"><div class="card-heading"><div><span class="eyebrow">التشخيص</span><h2>الأداء حسب المهارات</h2></div><span class="muted">من 0 إلى 100%</span></div><div id="skills"></div></section>
+
+  <section class="result-card"><div class="card-heading"><div><span class="eyebrow">التدرج</span><h2>الأداء حسب الصعوبة</h2></div></div><div id="levels"></div></section>
+
+  <section class="result-card"><div class="card-heading"><div><span class="eyebrow">التحليل</span><h2>نقاط القوة</h2></div></div><div id="strengths" class="pill-list"></div><div class="subheading">مجالات تحتاج إلى تطوير</div><div id="weaknesses" class="pill-list"></div></section>
+
+  <section class="result-card wide recommend">
+    <div class="card-heading"><div><span class="eyebrow">المسار المقترح</span><h2>التوصية التعليمية</h2></div><span id="courseBadge" class="course-badge">—</span></div>
+    <p id="recommendation"></p>
+    <div id="recommendationList" class="recommendation-list"></div>
+  </section>
+</div>
+
+<section class="report-note"><strong>ملاحظة:</strong> هذا التقرير تشخيصي لمساعدة المركز في تحديد المسار التعليمي. لا يُعد بديلًا عن التقييم الشامل للمهارات الإنتاجية مثل الكتابة والمحادثة.</section>
+
+<div class="print-actions no-print">
+  <button class="btn primary" onclick="location.href='index.html'">اختبار طالب جديد</button>
+  <button class="btn" onclick="location.href='test.html'">إعادة الاختبار</button>
+  <button class="btn" onclick="window.print()">طباعة التقرير</button>
+</div>
+<footer class="footer">Arabic Level Test · تقرير تشخيصي داخلي</footer>
+</main>
+<script src="js/questions.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/result.js"></script>
+</body>
+</html>

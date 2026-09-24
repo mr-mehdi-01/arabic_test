@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الاختبار | تحديد مستوى العربية</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="quiz-page">
+<header class="topbar">
+  <div class="brand"><span class="logo">A</span><span>Arabic Level Test</span></div>
+  <div class="top-student"><span>الطالب</span><strong id="studentNameTop">—</strong></div>
+  <button class="top-btn danger-btn" id="finishTop">إنهاء الاختبار</button>
+</header>
+
+<main class="page quiz-page-wrap">
+<div class="quiz-layout">
+<aside class="panel sidebar">
+  <div class="sidebar-title"><span class="logo">A</span><div><b>اختبار تحديد المستوى</b><small>اللغة العربية</small></div></div>
+  <div class="brand-desc">أجب عن الأسئلة بأفضل ما تستطيع. يمكنك التنقل بين الأسئلة ومراجعة أي سؤال قبل الإنهاء.</div>
+
+  <div class="ring" id="ring"><div class="ring-text" id="ringText">1 / 40</div></div>
+  <div class="small-label">التقدم</div>
+  <div class="progress-line"><span id="progressBar"></span></div>
+
+  <div class="stat"><span>الوقت المتبقي</span><strong id="timer">25:00</strong></div>
+  <div class="stat"><span>تمت الإجابة</span><strong id="answeredCount">0 / 40</strong></div>
+  <div class="stat"><span>قيد المراجعة</span><strong id="markedCount">0</strong></div>
+
+  <div class="note"><strong>💡 تذكير</strong><br>لا يوجد خصم على الإجابات الخاطئة. حاول الإجابة عن جميع الأسئلة.</div>
+  <a class="exit" href="index.html" id="exitLink">↩ الخروج من الاختبار</a>
+</aside>
+
+<section class="quiz-main">
+  <div class="quiz-head">
+    <div><span class="level-chip">اختبار تشخيصي</span><strong id="questionCounter">السؤال 1 من 40</strong></div>
+    <span class="question-type">اختيار من متعدد</span>
+  </div>
+
+  <div class="panel main-progress-card"><div class="progress-line"><span id="mainProgress"></span></div></div>
+
+  <div class="question-card" id="questionCard">
+    <div class="question-meta"><span id="difficultyLabel">السؤال</span><button class="btn small-btn" id="markBtn">⚑ مراجعة</button></div>
+    <div class="question-text" id="questionText"></div>
+    <div id="options" class="options"></div>
+    <div class="question-actions">
+      <button class="btn" id="prevBtn">→ السؤال السابق</button>
+      <button class="btn primary" id="nextBtn">السؤال التالي ←</button>
+    </div>
+  </div>
+</section>
+
+<aside class="panel navigator">
+  <div class="navigator-head"><h3>قائمة الأسئلة</h3><span id="navStatus">0%</span></div>
+  <div class="q-grid" id="qGrid"></div>
+  <div class="legend"><div><i class="teal"></i> تمت الإجابة</div><div><i></i> لم تتم الإجابة</div><div><i class="red"></i> للمراجعة</div></div>
+  <div class="note centered"><strong>بالتوفيق!</strong><br>كل إجابة تساعد على بناء تشخيص أدق.</div>
+</aside>
+</div>
+</main>
+
+<div class="modal-backdrop" id="finishModal" hidden>
+  <div class="modal">
+    <span class="modal-icon">✓</span><h2>إنهاء الاختبار؟</h2>
+    <p id="finishMessage"></p>
+    <div class="modal-actions"><button class="btn" id="cancelFinish">متابعة الاختبار</button><button class="btn primary" id="confirmFinish">عرض النتيجة</button></div>
+  </div>
+</div>
+
+<script src="js/questions.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

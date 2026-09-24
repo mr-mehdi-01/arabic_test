@@ -1,0 +1,12 @@
+FINAL QA REPORT — Arabic Level Test v4
+========================================
+PASS — 40 questions / 4 options each
+PASS — Skill distribution: 10 grammar / 7 morphology / 6 transformation / 6 language & structures / 5 rhetoric / 6 comprehension
+PASS — Difficulty distribution across six levels
+PASS — Student-facing skill/difficulty tags are not exposed as metadata
+PASS — Student name stored locally and displayed in report
+PASS — Timer, navigation, review marks, unanswered handling
+PASS — Result page shows overall level, skill analysis, difficulty analysis, strengths, development areas, recommendation
+PASS — Print stylesheet
+PASS — Responsive layout
+PASS — No external JS dependencies

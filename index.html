@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>اختبار تحديد المستوى | اللغة العربية</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">A</span><span>Arabic Level Test</span></div>
+  <nav class="nav">
+    <a class="active" href="index.html">الرئيسية</a>
+    <a href="test.html">الاختبار</a>
+    <a href="#about">عن الاختبار</a>
+    <a href="#skills">المهارات</a>
+  </nav>
+  <button class="top-btn" onclick="startTest()">ابدأ الاختبار</button>
+</header>
+
+<main class="page">
+<section class="hero">
+  <div class="hero-copy">
+    <span class="level-chip">Diagnostic Placement Test</span>
+    <h1>اكتشف مستواك الحقيقي في اللغة العربية</h1>
+    <p>اختبار تشخيصي احترافي من 40 سؤالًا، يقيس ست مهارات لغوية عبر مستويات متدرجة، ثم يقدم تقريرًا واضحًا عن المستوى العام ونقاط القوة ومجالات التطوير.</p>
+
+    <div class="start-card">
+      <label for="studentName">اسم الطالب</label>
+      <div class="start-row">
+        <input id="studentName" type="text" maxlength="80" placeholder="اكتب اسم الطالب هنا" autocomplete="name">
+        <button class="btn primary" onclick="startTest()">ابدأ الاختبار الآن ←</button>
+      </div>
+      <small>الاسم يستخدم فقط لعرضه في تقرير النتيجة على هذا الجهاز.</small>
+      <div id="nameError" class="form-error"></div>
+    </div>
+
+    <div class="hero-meta">
+      <span>⏱ 25 دقيقة</span><span>◈ 40 سؤالًا</span><span>✓ 6 مهارات</span><span>▣ تقرير تشخيصي</span>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="art-glow"></div>
+    <div class="a-mark">A</div>
+    <div class="art-label">ARABIC<br><b>PLACEMENT</b></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-heading"><span class="eyebrow">كيف يعمل الاختبار؟</span><h2>تشخيص يتجاوز مجرد الدرجة</h2><p>لا نعتمد على عدد الإجابات الصحيحة فقط؛ بل نحلل الأداء حسب المهارة ومستوى الصعوبة.</p></div>
+  <div class="feature-grid">
+    <article class="feature"><div class="icon-box">01</div><h3>اختبار متدرج</h3><p>الأسئلة تنتقل من الأساسيات إلى المهارات الأعلى، لتكوين صورة أوضح عن مستوى الطالب.</p></article>
+    <article class="feature"><div class="icon-box">02</div><h3>6 مهارات</h3><p>النحو، الصرف، التحويل، اللغة والتراكيب، الأساليب والبلاغة، والفهم والاستيعاب.</p></article>
+    <article class="feature"><div class="icon-box">03</div><h3>تقرير مفصل</h3><p>يعرض المستوى العام، أداء كل مهارة، الأداء حسب الصعوبة، ونقاط القوة ومجالات التطوير.</p></article>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="section-heading"><span class="eyebrow">مكونات القياس</span><h2>ماذا يقيس الاختبار؟</h2></div>
+  <div class="skill-cards">
+    <div>النحو <small>بناء الجملة والإعراب</small></div>
+    <div>الصرف <small>بنية الكلمة وتصريفها</small></div>
+    <div>التحويل <small>إعادة بناء الجمل</small></div>
+    <div>اللغة والتراكيب <small>سلامة الاستعمال</small></div>
+    <div>الأساليب والبلاغة <small>الأساليب والصور</small></div>
+    <div>الفهم والاستيعاب <small>فهم النص واستنتاج المعنى</small></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div><span class="eyebrow">جاهز؟</span><h2>ابدأ الاختبار واكتشف مستواك.</h2></div>
+  <button class="btn light" onclick="startTest()">بدء الاختبار ←</button>
+</section>
+
+<footer class="footer">اختبار تشخيصي لأغراض تحديد المسار التعليمي داخل المركز.</footer>
+</main>
+<script>
+function startTest(){
+  const input=document.getElementById('studentName');
+  const error=document.getElementById('nameError');
+  const name=(input?.value || '').trim();
+  if(!name){ error.textContent='يرجى إدخال اسم الطالب قبل بدء الاختبار.'; input?.focus(); return; }
+  localStorage.setItem('arabicTestStudent', name);
+  localStorage.removeItem('arabicTestAnswers');
+  localStorage.removeItem('arabicTestStartedAt');
+  location.href='test.html';
+}
+const saved=localStorage.getItem('arabicTestStudent');
+if(saved) document.addEventListener('DOMContentLoaded',()=>{document.getElementById('studentName').value=saved;});
+</script>
+</body>
+</html>
